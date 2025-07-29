@@ -1,0 +1,3 @@
+".\Objects\Ascii_counter.obj" 
+TO ".\Objects\counters" 
+PRINT(".\Listings\counters.m51") RAMSIZE(256) 

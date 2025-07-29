@@ -1,0 +1,45 @@
+C51 COMPILER V9.56.0.0   TWO_DIGIT_BDC_COUNTER                                             07/29/2025 10:57:19 PAGE 1   
+
+
+C51 COMPILER V9.56.0.0, COMPILATION OF MODULE TWO_DIGIT_BDC_COUNTER
+OBJECT MODULE PLACED IN .\Objects\Two_digit_BDC_counter.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Two_digit_BDC_counter.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRIN
+                    -T(.\Listings\Two_digit_BDC_counter.lst) TABS(2) OBJECT(.\Objects\Two_digit_BDC_counter.obj)
+
+line level    source
+
+   1          // 2 Digit BCD Counter
+   2          #include<reg51.h>
+   3          void msDelay(unsigned int);
+   4          
+   5          void main(){
+   6   1        unsigned int i,j;
+   7   1        for(i = 0 ;i<10;i++){
+   8   2          for(j = 0;j<10;j++){
+   9   3            P1 = ((i<<4)|j);
+  10   3            msDelay(10000);
+  11   3          }
+  12   2        }
+  13   1      }
+  14          void msDelay(unsigned int time){
+  15   1        unsigned int i,j;
+  16   1        for(i = 0;i<=time;i++)
+  17   1          for(j = 0;j<1275;j++);
+  18   1            // time waste
+  19   1          
+  20   1        
+  21   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     94    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       4
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
