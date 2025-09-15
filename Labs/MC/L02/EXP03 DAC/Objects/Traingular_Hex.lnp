@@ -1,0 +1,3 @@
+".\Objects\square.obj" 
+TO ".\Objects\Traingular_Hex" 
+PRINT(".\Listings\Traingular_Hex.m51") RAMSIZE(256) 

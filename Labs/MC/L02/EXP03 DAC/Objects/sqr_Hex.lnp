@@ -1,0 +1,3 @@
+".\Objects\square.obj" 
+TO ".\Objects\sqr_Hex" 
+PRINT(".\Listings\sqr_Hex.m51") RAMSIZE(256) 

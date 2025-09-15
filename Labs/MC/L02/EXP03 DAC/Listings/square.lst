@@ -1,0 +1,41 @@
+C51 COMPILER V9.56.0.0   SQUARE                                                            09/02/2025 11:53:41 PAGE 1   
+
+
+C51 COMPILER V9.56.0.0, COMPILATION OF MODULE SQUARE
+OBJECT MODULE PLACED IN .\Objects\square.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE square.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\sq
+                    -uare.lst) TABS(2) OBJECT(.\Objects\square.obj)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          void delay(unsigned int);
+   3          
+   4          void main(){
+   5   1        while(1){
+   6   2          P1 = 0x00;
+   7   2          delay(1000);
+   8   2          P1 = 0xff;
+   9   2          delay(1000);
+  10   2          }
+  11   1      }
+  12          void delay(unsigned int time){
+  13   1        unsigned int i,j;
+  14   1        for(i = 0;i<time;i++)
+  15   1          for(j = 0;j<1275;j++);
+  16   1          }
+  17            
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     54    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

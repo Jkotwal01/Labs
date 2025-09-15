@@ -1,0 +1,94 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        09/02/2025  11:48:31  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\Sine.obj TO .\Objects\DAC PRINT (.\Listings\DAC.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\Sine.obj (SINE)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\DAC (SINE)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     001AH     UNIT         ?DT?SINE
+            IDATA   0022H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     008CH     UNIT         ?C_C51STARTUP
+            CODE    088CH     0020H     UNIT         ?PR?_DELAY?SINE
+            CODE    08ACH     001DH     UNIT         ?C_INITSEG
+            CODE    08C9H     001AH     UNIT         ?PR?MAIN?SINE
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\DAC (SINE)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?SINE
+  +--> ?C_INITSEG
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\DAC (SINE)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        SINE
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  C:088CH         PUBLIC        _delay
+  D:0008H         PUBLIC        value
+  C:08C9H         PUBLIC        main
+  -------         PROC          MAIN
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/02/2025  11:48:31  PAGE 2
+
+
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:08C9H         LINE#         6
+  C:08C9H         LINE#         8
+  C:08C9H         LINE#         9
+  C:08CCH         LINE#         10
+  -------         ENDPROC       MAIN
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        time
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:088CH         LINE#         13
+  C:088CH         LINE#         15
+  C:0896H         LINE#         16
+  C:08ABH         LINE#         17
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        SINE
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?SINE
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0056H BYTE ( 4%) *
+******************************************************************************
+
+Program Size: data=35.0 xdata=0 code=230
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)
