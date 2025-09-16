@@ -1,0 +1,12 @@
+#include<p18f4550.h>
+#include "vector_relocate.h"
+
+void delay(unsigned int time){
+	unsigned int i,j;
+	for(i = 0;i<time;i++)
+		for(j = 0;j<1275;j++);
+}
+
+void main(){
+	
+}

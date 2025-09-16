@@ -1,0 +1,105 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        09/16/2025  10:50:20  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\stepper.obj TO .\Objects\Motor_hex PRINT (.\Listings\Motor_hex.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\stepper.obj (STEPPER)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?COPY)
+
+
+LINK MAP OF MODULE:  .\Objects\Motor_hex (STEPPER)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0008H     UNIT         _DATA_GROUP_
+            IDATA   0010H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     00F6H     UNIT         ?C?LIB_CODE
+            CODE    08F6H     0037H     UNIT         ?PR?MAIN?STEPPER
+            CODE    092DH     0020H     UNIT         ?PR?_DELAY?STEPPER
+            CODE    094DH     000CH     UNIT         ?C_C51STARTUP
+            CODE    0959H     0008H     UNIT         ?CO?STEPPER
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\Motor_hex (STEPPER)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?STEPPER
+
+?PR?MAIN?STEPPER               0008H    0008H
+  +--> ?CO?STEPPER
+  +--> ?PR?_DELAY?STEPPER
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\Motor_hex (STEPPER)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        STEPPER
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/16/2025  10:50:20  PAGE 2
+
+
+  C:092DH         PUBLIC        _delay
+  C:08F6H         PUBLIC        main
+  C:0959H         SYMBOL        _?ix1000
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        ms
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:092DH         LINE#         2
+  C:092DH         LINE#         4
+  C:0937H         LINE#         5
+  C:0945H         LINE#         6
+  C:094CH         LINE#         8
+  -------         ENDPROC       _DELAY
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        val
+  D:0082H         SYMBOL        i
+  -------         ENDDO         
+  C:08F6H         LINE#         10
+  C:08F6H         LINE#         12
+  C:0909H         LINE#         14
+  C:090CH         LINE#         15
+  C:090CH         LINE#         16
+  C:090FH         LINE#         17
+  C:091BH         LINE#         18
+  C:0922H         LINE#         19
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        STEPPER
+
+  -------         MODULE        ?C?COPY
+  C:08D0H         PUBLIC        ?C?COPY
+  -------         ENDMOD        ?C?COPY
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 005FH BYTE ( 4%) *
+******************************************************************************
+
+Program Size: data=17.0 xdata=0 code=356
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

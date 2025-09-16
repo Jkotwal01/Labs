@@ -1,0 +1,3 @@
+".\Objects\stepper.obj" 
+TO ".\Objects\Motor_hex" 
+PRINT(".\Listings\Motor_hex.m51") RAMSIZE(256) 
